@@ -190,10 +190,6 @@ This project focuses on automating user account management and implementing acce
    <li>Start and enable the service:</li>
    <img src="https://i.imgur.com/YCxUps6.png" height="40%" width="40%" alt="script"/>
    <br/>
-   <li>Run the Script:</li>
-   <img src="https://i.imgur.com/y0pv2di.png" height="40%" width="40%" alt="script" "/>
-   <br/>
-   </li></ul>
 </ol>
 <!--
 ```diff
