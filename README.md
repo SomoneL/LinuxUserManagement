@@ -158,9 +158,25 @@ This project focuses on automating user account management and implementing acce
    </ul>  
        <img src="https://i.imgur.com/lhys6XV.png" height="25%" width="25%" alt="script"/>
    </ul>
+    <li>Implement Account Lockout:</li>
    <ul>
-    
+      <li>Edit /etc/pam.d/common-auth to lock accounts after three failed login attempts by running the following:</li>
+        <img src="https://i.imgur.com/mdQCxCn.png" height="25%" width="25%" alt="script"/>
+         <br/>
+   <ul>
+      <li>Add the following line of code:</li>
+      <img src="https://i.imgur.com/nsauMaI.png" height="40%" width="40%" alt="script"/>
+         <br/>
+      <li>auth required pam_tally2.so: Specifies the use of the pam_tally2 module, which keeps a tally of failed login attempts for user accounts.
+      <li>deny = 3: Sets a limit of 3 failed login attempts before the account is locked.</li>
+      <li>unlock_time=600: Configures the lockout period to 600 seconds (10 minutes). After this time, the account is automatically unlocked.</li>
+      <li>onerr=fail: Ensures that if there’s an error in the PAM module, access is denied by default.</li>
+      <li>audit: Enables logging of authentication attempts, including both successful and failed logins.</li>
+      
+      
 
+</li>
+   </ul>
    </ul>
 </ol>
 <!--
