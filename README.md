@@ -143,16 +143,24 @@ This project focuses on automating user account management and implementing acce
    <ul>
       <li>Set these parameters:
          <br/>
-         <img src="https://i.imgur.com/xLBPzXn.png" height="40%" width="40%" alt="script"/>
-         <br/>
       </li>
+      <ul>
+      <li>PASS_MAX_DAYS: Sets the maximum number of days a user can use their current password before being required to change it.</li>
    </ul>
    <ul>
-      <li>You will want to install tools for user and system management by running the following bash script:
-         <br/>
-         <img src="https://i.imgur.com/u0ywtmF.png" height="40%" width="40%" alt="script"/>
-         <br/>
-      </li>
+      <li>PASS_MIN_DAYS: Defines the minimum number of days a user must wait before they can change their password again after setting it.</li>
+   </ul>
+   <ul>
+      <li>PASS_MIN_LEN: Sets the minimum length for user passwords to 12 characters.</li>
+   </ul>
+     <ul>
+      <li>PASS_WARN_AGE: Sends a warning to the user 7 days before their password is set to expire.</li>
+   </ul>  
+       <img src="https://i.imgur.com/lhys6XV.png" height="25%" width="25%" alt="script"/>
+   </ul>
+   <ul>
+    
+
    </ul>
 </ol>
 <!--
