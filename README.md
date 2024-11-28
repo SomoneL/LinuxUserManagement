@@ -136,12 +136,12 @@ This project focuses on automating user account management and implementing acce
    </ul>
    <li>Password Requirements</li>
    <ul>
-      <li>Modify /etc/login.defs for system-wide policies:</li>
+      <li>Modify /etc/login.defs for system-wide policies by running the following:</li>
         <img src="https://i.imgur.com/u0ywtmF.png" height="40%" width="40%" alt="script"/>
          <br/>
    </ul>
    <ul>
-      <li>You will want to update and upgrade packages by running the following bash script: 
+      <li>Set these parameters:
          <br/>
          <img src="https://i.imgur.com/xLBPzXn.png" height="40%" width="40%" alt="script"/>
          <br/>
