@@ -173,11 +173,27 @@ This project focuses on automating user account management and implementing acce
       <li>onerr=fail: Ensures that if there’s an error in the PAM module, access is denied by default.</li>
       <li>audit: Enables logging of authentication attempts, including both successful and failed logins.</li>
       
-      
-
 </li>
    </ul>
    </ul>
+</ol>
+
+
+
+<h2>Step 6: Monitor User Activity </h2>
+<ol>
+   <li>Enable Audit Logging </li>
+   <ul>
+   <li>Install auditd:</li>
+   <img src="https://i.imgur.com/WuGuD2Y.png" height="40%" width="40%" alt="script"/><br/>
+   </ul>
+   <li>Start and enable the service:</li>
+   <img src="https://i.imgur.com/YCxUps6.png" height="40%" width="40%" alt="script"/>
+   <br/>
+   <li>Run the Script:</li>
+   <img src="https://i.imgur.com/y0pv2di.png" height="40%" width="40%" alt="script" "/>
+   <br/>
+   </li></ul>
 </ol>
 <!--
 ```diff
