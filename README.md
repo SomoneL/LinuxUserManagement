@@ -116,6 +116,45 @@ This project focuses on automating user account management and implementing acce
    </ul>
   <img src="https://i.imgur.com/pY3M8ON.png" height="30%" width="30%" alt="script"/>
 </ol>
+
+
+
+<h2>Step 5: Automate Password Policies </h2>
+<ol>
+   <li>Password Policy: Configure strong password requirements on all systems</li>
+   <ul>
+      <li>Minimum length: 12 characters.</li>
+   </ul>
+   <ul>
+      <li>Must include uppercase, lowercase, numbers, and special characters.</li>
+   </ul>
+   <ul>
+      <li>Prevent the reuse of the last five passwords.</li>
+   </ul>
+   <ul>
+      <li>Implement password expiration policies: Set passwords to expire every 60 days on all machines (via Group Policy for Windows and /etc/login.defs for Linux).</li>
+   </ul>
+   <li>Password Requirements</li>
+   <ul>
+      <li>Modify /etc/login.defs for system-wide policies:</li>
+        <img src="https://i.imgur.com/u0ywtmF.png" height="40%" width="40%" alt="script"/>
+         <br/>
+   </ul>
+   <ul>
+      <li>You will want to update and upgrade packages by running the following bash script: 
+         <br/>
+         <img src="https://i.imgur.com/xLBPzXn.png" height="40%" width="40%" alt="script"/>
+         <br/>
+      </li>
+   </ul>
+   <ul>
+      <li>You will want to install tools for user and system management by running the following bash script:
+         <br/>
+         <img src="https://i.imgur.com/u0ywtmF.png" height="40%" width="40%" alt="script"/>
+         <br/>
+      </li>
+   </ul>
+</ol>
 <!--
 ```diff
 - text in red
