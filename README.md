@@ -181,4 +181,6 @@ This project focuses on automating user account management and implementing acce
    <img src="https://i.imgur.com/y0pv2di.png" height="40%" width="40%" alt="script" "/>
    <br/>
    </li></ul>
+   <h2>Step 7: Conclusion</h2>
+ In this project, I developed an automated user management solution for Linux, covering onboarding, access control, and offboarding. I created a Bash script to automate account creation with secure default settings, restricted SSH access based on roles, and implemented group-based access controls. The project also includes login monitoring for proactive security and regular user access reviews, ensuring that only authorized users have access. This demonstrates my skills in Linux administration, automation, and security, showcasing essential competencies for a System Administrator role.     
 </ol>
