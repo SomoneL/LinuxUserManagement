@@ -26,11 +26,12 @@ This project focuses on automating user account management and implementing acce
       <li>To host my Linux server, I will be using the CentOS operating system.</li>
    </ul>
    <ul>
-      <li>Navigate to the CentOS Download Page.</li>
+      <li>Navigate to the CentOS Download Page: https://www.centos.org/download/</li>
    </ul>
    <ul>
       <li>Choose the version that matches your host operating system (Windows, macOS, or Linux).</li>
    </ul>
+   
 </ol>
 <h2>Step 2: Prepare Your Environment </h2>
 <ol>
@@ -41,6 +42,8 @@ This project focuses on automating user account management and implementing acce
    <ul>
       <li>Choose the version that matches your host operating system (Windows, macOS, or Linux).</li>
    </ul>
+    <br><img src="https://imgur.com/yTznV63.png" height="40%" width="40%" alt="script"/>
+    <br/>
    <li>Install Essential Tools:</li>
    <ul>
       <li>Once your VM has finished setting up, you will want to prepare it for use.</li>
