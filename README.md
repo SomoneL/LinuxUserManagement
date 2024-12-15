@@ -1,6 +1,9 @@
 # Using Linux to Automate User Management and Access Controls
 <h2>Description</h2>
-This project focuses on automating user account management and implementing access controls to streamline and secure the onboarding/offboarding processes. Automating user management is a valuable skill in system administration, as it ensures consistent security practices and reduces manual work. Below is a step-by-step guide for implementation.
+
+This guide provides a practical approach to managing users, groups, and directory permissions in Linux. It focuses on creating directory structures and user groups aligned with organizational teams like Development, Operations, and Analytics. Using tools such as chown and chmod, administrators can assign appropriate permissions, ensuring only authorized users have access.
+
+The guide includes examples of creating users (e.g., Jess Waller for Development, Blake Dorsey for Operations, and Joey Ewart for Analytics) and configuring permissions to restrict access strictly to their assigned directories, preventing unauthorized access.
 <br />
 <h2>Step 1: Download and Install VirtualBox and CentOS to add to your VM </h2>
 <ol>
@@ -32,9 +35,6 @@ This project focuses on automating user account management and implementing acce
       <li>Choose the version that matches your host operating system (Windows, macOS, or Linux).</li>
    </ul>
    
-</ol>
-<h2>Step 2: Prepare Your Environment </h2>
-<ol>
    <li>Configure your VM Settings and Mount your Linux OS</li>
    <ul>
       <li>Allocate at least 2 CPUs, 4GB RAM, and 20GB storage for the VM.</li>
@@ -44,38 +44,20 @@ This project focuses on automating user account management and implementing acce
    </ul>
     <br><img src="https://imgur.com/yTznV63.png" height="40%" width="40%" alt="script"/>
     <br/>
-   <li>Install Essential Tools:</li>
-   <ul>
-      <li>Once your VM has finished setting up, you will want to prepare it for use.</li>
-   </ul>
-   <ul>
-      <li>You will want to update and upgrade packages by running the following bash script: 
-         <br/>
-         <img src="https://i.imgur.com/xLBPzXn.png" height="40%" width="40%" alt="script"/>
-         <br/>
-      </li>
-   </ul>
-   <ul>
-      <li>You will want to install tools for user and system management by running the following bash script:
-         <br/>
-         <img src="https://i.imgur.com/eVUHNRy.png" height="40%" width="40%" alt="script"/>
-         <br/>
-      </li>
-   </ul>
 </ol>
-<h2>Step 3: Automate User Account Creation </h2>
+<h2>Step 2: Directory Creation and Group Management </h2>
 <ol>
-   <li>Write a Bash Script</li>
+   <li>Sign in as the root user to make the appropriate changes.</li>
    <ul>
-      <li>Create a script to automate adding users and assigning them to groups. The script name we will be using is (user_management.sh):.</li>
+      <li>If you're not already the root user, switch by running: 'sudo su'</li>
    </ul>
    <br/>
-   <img src="https://i.imgur.com/7V1Ieb7.png" height="40%" width="40%" alt="script"/>
+   <img src="https://imgur.com/VxKIU5j.png" height="40%" width="40%" alt="script"/>
    <br/>
-   <li>Make the Script Executable:</li>
-   <img src="https://i.imgur.com/HsDzzg6.png" height="40%" width="40%" alt="script"/>
+   <li>Create 3 directories: Engineering, Operations, Analytics</li>
+   <img src="https://imgur.com/lDg1CTi.png" height="40%" width="40%" alt="script"/>
    <br/>
-   <li>Run the Script:</li>
+   <li>Create several blank dummy files in each directory:</li>
    <img src="https://i.imgur.com/y0pv2di.png" height="40%" width="40%" alt="script" "/>
    <br/>
    </li></ul>
