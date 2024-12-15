@@ -58,9 +58,24 @@ The guide includes examples of creating users (e.g., Jess Waller for Development
    <img src="https://imgur.com/lDg1CTi.png" height="40%" width="40%" alt="script"/>
    <br/>
    <li>Create several blank dummy files in each directory:</li>
-   <img src="https://i.imgur.com/y0pv2di.png" height="40%" width="40%" alt="script" "/>
+   <img src="https://imgur.com/4TM5d0s.png" height="40%" width="40%" alt="script" "/>
    <br/>
-   </li></ul>
+   <li>Using the command 'cd' to enter each created directory and 'ls' to view your created files.</li>
+  <ul> <li>Explanation- cd means: change directory, ls means: list files, touch means: create new files </li></ul>
+   <img src="https://imgur.com/OctSqJH.png" height="40%" width="40%" alt="script" "/>
+   <br/>
+   <img src="https://imgur.com/Kb3ZvFA.png" height="40%" width="40%" alt="script" "/>
+   <br/>
+   <img src="https://imgur.com/SNiJSiJ.png" height="40%" width="40%" alt="script" "/>
+   <br/>
+  </ul>
+  <li>Create 3 groups: Engineering, Operations, Analytics</li>
+   <img src="https://imgur.com/7W7QiVt.png" height="40%" width="40%" alt="script" "/> <br/>
+   <ul> <li>Run the following command 'cat /etc/group' to view a list of all the created groups. </li></ul>
+   <img src="https://imgur.com/at8JCC2.png" height="40%" width="40%" alt="script" "/> <br/>
+   <li>Assign the respective group to each directory using the 'chown' command:</li>
+   <ul> <li>Run the following commands: 'sudo chown root:Engineers Engineering', 'sudo chown root:Operations Operations', 'sudo chown root:DataAnalysts Analytics'. Then, run the command 'll'(displays a long list of file info) to list all the file permissions. </li></ul>
+   <img src="https://imgur.com/BxLxwMl.png" height="40%" width="40%" alt="script" "/> <br/>
 </ol>
 <h2>Step 4: Implement Access Control Policies </h2>
 <ol>
