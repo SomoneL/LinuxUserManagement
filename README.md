@@ -137,19 +137,12 @@ The guide includes examples of creating users (e.g., Jess Waller for Development
    <li>Make the script executable:</li>
    <ul>
       <li>Run the following script: chmod +x setup_users_and_permissions.sh</li>
-      <img src="https://i.imgur.com/mdQCxCn.png" height="25%" width="25%" alt="script"/>
+      <img src="https://imgur.com/9JCPC7W.png" height="25%" width="25%" alt="script"/>
       <br/>
       <ul>
-         <li>Add the following line of code:</li>
-         <img src="https://i.imgur.com/nsauMaI.png" height="40%" width="40%" alt="script"/>
-         <br/>
-         <li>auth required pam_tally2.so: Specifies the use of the pam_tally2 module, which keeps a tally of failed login attempts for user accounts.
-         <li>deny = 3: Sets a limit of 3 failed login attempts before the account is locked.</li>
-         <li>unlock_time=600: Configures the lockout period to 600 seconds (10 minutes). After this time, the account is automatically unlocked.</li>
-         <li>onerr=fail: Ensures that if there’s an error in the PAM module, access is denied by default.</li>
-         <li>audit: Enables logging of authentication attempts, including both successful and failed logins.</li>
-         </li>
+      <li> Run the script as the root user</li>
       </ul>
+<li>Note, when running script, it will says users already exists as we already created them earlier. This script automates our process making it more efficient. You can now login as the created users and test that the permissions are accurate.</li>
    </ul>
 </ol>
    <h2>Step 7: Conclusion</h2>
