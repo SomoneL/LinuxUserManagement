@@ -1,8 +1,6 @@
 # Using Linux to Automate User Management and Access Controls
 <h2>Description</h2>
-
 This guide provides a practical approach to managing users, groups, and directory permissions in Linux. It focuses on creating directory structures and user groups aligned with organizational teams like Development, Operations, and Analytics. Using tools such as chown and chmod, administrators can assign appropriate permissions, ensuring only authorized users have access.
-
 The guide includes examples of creating users (e.g., Jess Waller for Development, Blake Dorsey for Operations, and Joey Ewart for Analytics) and configuring permissions to restrict access strictly to their assigned directories, preventing unauthorized access.
 <br />
 <h2>Step 1: Download and Install VirtualBox and CentOS to add to your VM </h2>
@@ -34,7 +32,6 @@ The guide includes examples of creating users (e.g., Jess Waller for Development
    <ul>
       <li>Choose the version that matches your host operating system (Windows, macOS, or Linux).</li>
    </ul>
-   
    <li>Configure your VM Settings and Mount your Linux OS</li>
    <ul>
       <li>Allocate at least 2 CPUs, 4GB RAM, and 20GB storage for the VM.</li>
@@ -42,8 +39,8 @@ The guide includes examples of creating users (e.g., Jess Waller for Development
    <ul>
       <li>Choose the version that matches your host operating system (Windows, macOS, or Linux).</li>
    </ul>
-    <br><img src="https://imgur.com/yTznV63.png" height="40%" width="40%" alt="script"/>
-    <br/>
+   <br><img src="https://imgur.com/yTznV63.png" height="40%" width="40%" alt="script"/>
+   <br/>
 </ol>
 <h2>Step 2: Directory Creation and Group Management </h2>
 <ol>
@@ -61,94 +58,85 @@ The guide includes examples of creating users (e.g., Jess Waller for Development
    <img src="https://imgur.com/4TM5d0s.png" height="40%" width="40%" alt="script" "/>
    <br/>
    <li>Using the command 'cd' to enter each created directory and 'ls' to view your created files.</li>
-  <ul> <li>Explanation- cd means: change directory, ls means: list files, touch means: create new files </li></ul>
+   <ul>
+      <li>Explanation- cd means: change directory, ls means: list files, touch means: create new files </li>
+   </ul>
    <img src="https://imgur.com/OctSqJH.png" height="40%" width="40%" alt="script" "/>
    <br/>
    <img src="https://imgur.com/Kb3ZvFA.png" height="40%" width="40%" alt="script" "/>
    <br/>
    <img src="https://imgur.com/SNiJSiJ.png" height="40%" width="40%" alt="script" "/>
    <br/>
-  </ul>
-  <li>Create 3 groups: Engineering, Operations, Analytics</li>
+   </ul>
+   <li>Create 3 groups: Engineering, Operations, Analytics</li>
    <img src="https://imgur.com/7W7QiVt.png" height="40%" width="40%" alt="script" "/> <br/>
-   <ul> <li>Run the following command 'cat /etc/group' to view a list of all the created groups. </li></ul>
+   <ul>
+      <li>Run the following command 'cat /etc/group' to view a list of all the created groups. </li>
+   </ul>
    <img src="https://imgur.com/at8JCC2.png" height="40%" width="40%" alt="script" "/> <br/>
    <li>Assign the respective group to each directory using the 'chown' command:</li>
-   <ul> <li>Run the following commands: 'sudo chown root:Engineers Engineering', 'sudo chown root:Operations Operations', 'sudo chown root:DataAnalysts Analytics'. Then, run the command 'll'(displays a long list of file info) to list all the file permissions. </li></ul>
+   <ul>
+      <li>Run the following commands: 'sudo chown root:Engineers Engineering', 'sudo chown root:Operations Operations', 'sudo chown root:DataAnalysts Analytics'. Then, run the command 'll'(displays a long list of file info) to list all the file permissions. </li>
+   </ul>
    <img src="https://imgur.com/BxLxwMl.png" height="40%" width="40%" alt="script" "/> <br/>
+   <li>Set permissions using chmod so only the group owner has access:</li>
+   <img src="https://imgur.com/o3fHpll.png" height="40%" width="40%" alt="script" "/> <br/>
+   <ul>
+      <li>chmod: changes file permissions, 770 means: sets files or directory permissions so only the owner and group can read, write, and execurte while others cannot.  </li>
+   </ul>
+   <img src="https://imgur.com/S0l5PUS.png" height="40%" width="40%" alt="script" "/> <br/>
+   <li>Create the users with their associated group and set passwords for them by running the  following commands:</li>
+   <img src="https://imgur.com/GwGeTA2.png" height="40%" width="40%" alt="script" "/> <br/>
+
+   <li>Explanation: </li>
+   <ul>
+    <li> -m: Creates a home directory for the user.</li>
+   </ul>
+   <ul>
+    <li> -G Engineers: Adds the user to the Engineers group.</li>
+   </ul>
+   <ul>
+    <li> -s /bin/bash: Sets /bin/bash as the default shell for the user.</li>
+   </ul>
+   <ul>
+    <li>-c "Jordan Blake, jblake@linuxproject.com": Adds the full name and email to the comment (GECOS) field.</li>
+   </ul>
+   <ul>
+    <li>echo "jblake:password" | sudo chpasswd: This sets the password for the user (password should be replaced with the actual password you want to assign).</li>
+   </ul>
 </ol>
-<h2>Step 4: Implement Access Control Policies </h2>
+<h2>Step 3: Verify User Prmissions </h2>
 <ol>
-   <li>Define User Roles: Assign specific roles to users based on their function in the lab.</li>
+   <li>Switch to each user and verify directory permissions. Switch to each user with su:</li>
+    <br><img src="https://imgur.com/jW2Hd5J.png" height="30%" width="30%" alt="script"/></br>
    <ul>
-      <li>Administrators: Full access to all VMs, Active Directory management, and Splunk configurations.</li>
+      <li>Verify that only /Engineering is accessible to jblake by trying to cd into the other directories (/Operations and /Analytics). They should get a "Permission denied" error.</li>
    </ul>
    <ul>
-      <li>Standard Users: Limited access to specific Windows or Linux machines for testing and learning purposes.</li>
+      <li>Use the following commands to test:</li>
    </ul>
-   <ul>
-      <li>Guests: Minimal access, primarily for observing system activity without making changes.</li>
-   </ul>
-   <ul>
-      <br></br>
-      <li>Create groups for specific roles (e.g., admin, user, guest) by running the following code:</li>
-   </ul>
-   <img src="https://i.imgur.com/RXI5kjZ.png" height="30%" width="30%" alt="script"/>
+   <img src="https://imgur.com/wSFoM16.png" height="30%" width="30%" alt="script"/>
    <br/>
-   <li>Assign Permissions to Groups</li>
-   </ul>
-   <ul>
-      <li>Use the chmod and chown commands to set directory permissions.</li>
-   </ul>
-   <img src="https://i.imgur.com/9c335UK.png" height="30%" width="30%" alt="script"/>
-   <li>Enforce Access Control</li>
-   <ul>
-      <li>Verify permissions by switching to different users and testing to see if you can access the created directories.</li>
-   </ul>
-   <img src="https://i.imgur.com/pY3M8ON.png" height="30%" width="30%" alt="script"/>
 </ol>
-<h2>Step 5: Automate Password Policies </h2>
+<h2>Step 4: Create Bash Script for Automation </h2>
 <ol>
-   <li>Password Policy: Configure strong password requirements on all systems</li>
+   <li>Now, let’s create a bash script that automates everything we did for user and permission creation.</li>
    <ul>
-      <li>Minimum length: 12 characters.</li>
+      <li>Run the code: nano setup_users_and_permissions.sh</li>
    </ul>
+   <img src="https://imgur.com/LfKoiGW.png" height="40%" width="40%" alt="script"/>
+   <br/>
+
+   <li>Create the bash script by running the following:</li>
    <ul>
-      <li>Must include uppercase, lowercase, numbers, and special characters.</li>
-   </ul>
-   <ul>
-      <li>Prevent the reuse of the last five passwords.</li>
-   </ul>
-   <ul>
-      <li>Implement password expiration policies: Set passwords to expire every 60 days on all machines (via Group Policy for Windows and /etc/login.defs for Linux).</li>
-   </ul>
-   <li>Password Requirements</li>
-   <ul>
-      <li>Modify /etc/login.defs for system-wide policies by running the following:</li>
-      <img src="https://i.imgur.com/u0ywtmF.png" height="40%" width="40%" alt="script"/>
+      <img src="https://imgur.com/e8QQhBB.png" height="40%" width="40%" alt="script"/>
       <br/>
    </ul>
-   <ul>
-      <li>Set these parameters:
-         <br/>
-      </li>
-      <ul>
-         <li>PASS_MAX_DAYS: Sets the maximum number of days a user can use their current password before being required to change it.</li>
-      </ul>
-      <ul>
-         <li>PASS_MIN_DAYS: Defines the minimum number of days a user must wait before they can change their password again after setting it.</li>
-      </ul>
-      <ul>
-         <li>PASS_MIN_LEN: Sets the minimum length for user passwords to 12 characters.</li>
-      </ul>
-      <ul>
-         <li>PASS_WARN_AGE: Sends a warning to the user 7 days before their password is set to expire.</li>
-      </ul>
-      <img src="https://i.imgur.com/lhys6XV.png" height="25%" width="25%" alt="script"/>
+
    </ul>
-   <li>Implement Account Lockout:</li>
+   <li>Make the script executable:</li>
    <ul>
-      <li>Edit /etc/pam.d/common-auth to lock accounts after three failed login attempts by running the following:</li>
+      <li>Run the following script: chmod +x setup_users_and_permissions.sh</li>
       <img src="https://i.imgur.com/mdQCxCn.png" height="25%" width="25%" alt="script"/>
       <br/>
       <ul>
@@ -164,23 +152,6 @@ The guide includes examples of creating users (e.g., Jess Waller for Development
       </ul>
    </ul>
 </ol>
-
-<h2>Step 6: Monitor User Activity </h2>
-<ol>
-   <li>Enable Audit Logging</li>
-   <ul>
-      <li>Install auditd:</li>
-   </ul>
-   <br/>
-   <img src="https://i.imgur.com/tBsG67J.png" height="40%" width="40%" alt="script"/>
-   <br/>
-   <li>Start and enable the service:</li>
-   <img src="https://i.imgur.com/TWlGzOR.png" height="40%" width="40%" alt="script"/>
-   <br/>
-   <li>Define Audit Rules</li>
-   <img src="https://i.imgur.com/y0pv2di.png" height="40%" width="40%" alt="script" "/>
-   <br/>
-   </li></ul>
    <h2>Step 7: Conclusion</h2>
- In this project, I developed an automated user management solution for Linux, covering onboarding, access control, and offboarding. I created a Bash script to automate account creation with secure default settings, restricted SSH access based on roles, and implemented group-based access controls. The project also includes login monitoring for proactive security and regular user access reviews, ensuring that only authorized users have access. This demonstrates my skills in Linux administration, automation, and security, showcasing essential competencies for a System Administrator role.     
+   In this project, I developed an automated user management solution for Linux, covering onboarding, access control, and offboarding. I created a Bash script to automate account creation with secure default settings, restricted SSH access based on roles, and implemented group-based access controls. The project also includes login monitoring for proactive security and regular user access reviews, ensuring that only authorized users have access. This demonstrates my skills in Linux administration, automation, and security, showcasing essential competencies for a System Administrator role.     
 </ol>
