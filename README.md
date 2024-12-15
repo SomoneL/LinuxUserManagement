@@ -1,7 +1,7 @@
 # Using Linux to Automate User Management and Access Controls
 <h2>Description</h2>
-This guide provides a practical approach to managing users, groups, and directory permissions in Linux. It focuses on creating directory structures and user groups aligned with organizational teams like Development, Operations, and Analytics. Using tools such as chown and chmod, administrators can assign appropriate permissions, ensuring only authorized users have access.
-The guide includes examples of creating users (e.g., Jess Waller for Development, Blake Dorsey for Operations, and Joey Ewart for Analytics) and configuring permissions to restrict access strictly to their assigned directories, preventing unauthorized access.
+This guide provides a practical approach to managing users, groups, and directory permissions in Linux. It focuses on creating directory structures and user groups aligned with organizational teams like Engineering, Operations, and Analytics. Using tools such as chown and chmod, administrators can assign appropriate permissions, ensuring only authorized users have access.
+The guide includes examples of creating users and configuring permissions to restrict access strictly to their assigned directories, preventing unauthorized access.
 <br />
 <h2>Step 1: Download and Install VirtualBox and CentOS to add to your VM </h2>
 <ol>
@@ -146,5 +146,5 @@ The guide includes examples of creating users (e.g., Jess Waller for Development
    </ul>
 </ol>
    <h2>Step 7: Conclusion</h2>
-   In this project, I developed an automated user management solution for Linux, covering onboarding, access control, and offboarding. I created a Bash script to automate account creation with secure default settings, restricted SSH access based on roles, and implemented group-based access controls. The project also includes login monitoring for proactive security and regular user access reviews, ensuring that only authorized users have access. This demonstrates my skills in Linux administration, automation, and security, showcasing essential competencies for a System Administrator role.     
+  In conclusion, this guide offers a practical framework for managing users, groups, and directory permissions in Linux. By aligning directory structures and user groups with organizational teams such as Engineering, Operations, and Analytics, administrators can streamline access control. Leveraging tools like chown and chmod, permissions can be precisely configured to ensure that only authorized users access specific directories. Through clear examples of user creation and permission configuration, this guide demonstrates how to effectively restrict access and enhance security within a Linux environment..     
 </ol>
